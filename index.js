@@ -35,8 +35,15 @@ const contacts = [
 
 function lookUpProfile(name, prop) {
   // Only change code below this line
-
+  for (let i = 0; i < contacts.length; i++){
+    if(contacts[i].firstName == name && contacts[i].likes == prop){
+      return `FirstName: ${name} & Likes: ${prop}` 
+    } else if (contacts[i].firstName !== name && contacts[i].likes !== prop){
+      return "Not found!"
+    }
+    // console.log(contacts[i].firstName)
+  }
   // Only change code above this line
 }
 lookUpProfile("Akira", "likes")
-console.log();
+console.log(lookUpProfile("Akira", "likes"));
